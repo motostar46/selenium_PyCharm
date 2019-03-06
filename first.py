@@ -1,5 +1,6 @@
 import unittest
 from selenium import webdriver
+import time
 
 
 class SearchTests(unittest.TestCase):
@@ -10,7 +11,7 @@ class SearchTests(unittest.TestCase):
         cls.driver.maximize_window()
 
         cls.driver.get("http://software-testing.ru/")
-
+        time.sleep(5)
 
     @classmethod
     def tearDownClass(cls):
