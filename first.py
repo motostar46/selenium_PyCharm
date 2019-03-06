@@ -11,6 +11,8 @@ class SearchTests(unittest.TestCase):
         cls.driver.maximize_window()
 
         cls.driver.get("http://software-testing.ru/")
+
+    def test_wait(self):
         time.sleep(5)
 
     @classmethod
