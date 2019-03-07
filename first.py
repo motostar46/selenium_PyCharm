@@ -13,7 +13,7 @@ class SearchTests(unittest.TestCase):
         cls.driver.get("http://software-testing.ru/")
 
     def test_wait(self):
-        time.sleep(5)
+        time.sleep(2)
 
     @classmethod
     def tearDownClass(cls):
