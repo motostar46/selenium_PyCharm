@@ -12,8 +12,4 @@ def driver(request):
 
 
 def test_example(driver):
-    driver.get("http://localhost/litecart/admin/login.php")
-    wait = WebDriverWait(driver, 10)
-    driver.find_element_by_name("username").send_keys("admin")
-    driver.find_element_by_name("password").send_keys("admin")
-    driver.find_element_by_name("login").click()
+    driver.get("http://google.com")
