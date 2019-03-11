@@ -4,7 +4,11 @@ from selenium import webdriver
 
 @pytest.fixture
 def driver(request):
-    wd = webdriver.Chrome()
+#    options = webdriver.IeOptions()
+#    options.binary_location = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+#    options.add_argument("start-maximized")
+
+    wd = webdriver.Ie()
     request.addfinalizer(wd.quit)
     return wd
 
