@@ -25,7 +25,7 @@ def is_element_present(driver, *args):
 
 
 def test_example(driver):
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(3)
     driver.get("http://localhost/litecart/admin")
 
     driver.find_element_by_name("username").send_keys("admin")
@@ -38,11 +38,11 @@ def test_example(driver):
         driver.find_element_by_css_selector(locator).click()
 
         is_element_present(driver, By.TAG_NAME, "h1")
-        quantity_nested_elements = driver.find_elements_by_css_selector(".docs .name")
+        quantity_nested_elements = driver.find_elements_by_css_selector("#app- .docs a")
 
         if quantity_nested_elements:
             for j in range(len(quantity_nested_elements)):
-                nested_elements = driver.find_elements_by_css_selector(".docs .name")
+                nested_elements = driver.find_elements_by_css_selector("#app- .docs a")
                 nested_elements[j].click()
                 is_element_present(driver, By.TAG_NAME, "h1")
 
