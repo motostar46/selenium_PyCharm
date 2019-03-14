@@ -34,8 +34,8 @@ def test_example(driver):
     quantity_main_elements = driver.find_elements_by_css_selector("#app->a")
 
     for i in range(1, len(quantity_main_elements) + 1):
-        row = "#app-:nth-of-type(" + str(i) + ")>a"
-        driver.find_element_by_css_selector(row).click()
+        locator = "#app-:nth-of-type(" + str(i) + ")>a"
+        driver.find_element_by_css_selector(locator).click()
 
         is_element_present(driver, By.TAG_NAME, "h1")
         quantity_nested_elements = driver.find_elements_by_css_selector(".docs .name")
