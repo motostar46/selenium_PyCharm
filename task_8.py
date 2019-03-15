@@ -17,7 +17,7 @@ def driver(request):
 def test_example(driver):
     driver.implicitly_wait(3)
     driver.get("http://localhost/litecart/")
-    duckling_elements = driver.find_elements_by_css_selector("[class='product column shadow hover-light']")
+    duckling_elements = driver.find_elements_by_css_selector("[class~='product']")
     for duck in duckling_elements:
         sticker = duck.find_elements_by_css_selector("[class^='sticker']")
         if len(sticker) == 1:
