@@ -22,6 +22,7 @@ def test_sorting(driver):
     all_rows = driver.find_elements_by_xpath("//form[@name='countries_form']//tr[@class='row']")
     all_countries = []
     countries_zones = []
+
     for i in range(len(all_rows)):
         all_countries.append(all_rows[i].find_element_by_css_selector('a:not([title])').text)
         if all_rows[i].find_element_by_xpath('td[6]').text != '0':
