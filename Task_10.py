@@ -29,9 +29,8 @@ def driver(request):
 def test_styles_on_main_page(driver):
     driver.implicitly_wait(3)
     driver.get("http://localhost/litecart/")
-    first_item = driver.find_element_by_xpath("//div[@id='box-campaigns']//a")
-    old_price_element = first_item.find_element_by_css_selector(".regular-price")
-    new_price_element = first_item.find_element_by_css_selector(".campaign-price")
+    old_price_element = driver.find_element_by_css_selector("#box-campaigns .regular-price")
+    new_price_element = driver.find_element_by_css_selector("#box-campaigns .campaign-price")
 
     color_old_price = old_price_element.value_of_css_property("color")
     color_new_price = new_price_element.value_of_css_property("color")
