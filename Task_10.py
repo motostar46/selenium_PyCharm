@@ -62,9 +62,9 @@ def test_compare_pages(driver):
     old_price_on_item_page = driver.find_element_by_css_selector('#box-product .regular-price').text
     new_price_on_item_page = driver.find_element_by_css_selector('#box-product .campaign-price').text
 
-    assert name_on_main_page == name_on_item_page, "The item names is different"
-    assert old_price_on_main_page == old_price_on_item_page, " The old prices is different"
-    assert new_price_on_main_page == new_price_on_item_page, "The new prices is different "
+    assert name_on_main_page == name_on_item_page, "The name of the items are different"
+    assert old_price_on_main_page == old_price_on_item_page, " The old prices are different"
+    assert new_price_on_main_page == new_price_on_item_page, "The new prices are different "
 
 
 def test_styles_on_item_page(driver):
