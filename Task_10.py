@@ -34,8 +34,8 @@ def test_styles_on_main_page(driver):
 
     color_old_price = old_price_element.value_of_css_property("color")
     color_new_price = new_price_element.value_of_css_property("color")
-    crossed_old_main_page = old_price_element.value_of_css_property("text-decoration")
-    bold_new_main_page = new_price_element.value_of_css_property("font-weight")
+    crossed_old_price = old_price_element.value_of_css_property("text-decoration")
+    bold_new_price = new_price_element.value_of_css_property("font-weight")
 
     color_old_parsed = parsing_color(color_old_price)
     color_new_parsed = parsing_color(color_new_price)
@@ -44,9 +44,9 @@ def test_styles_on_main_page(driver):
              ), "The old price font is bigger than new one")
     assert color_old_parsed[0] == color_old_parsed[1] == color_old_parsed[2], "The old price color is not grey"
     assert color_new_parsed[1] == color_new_parsed[2] == 0, "The new price color is not red"
-    assert crossed_old_main_page[:12] == 'line-through', "The old price is not crossed"
-    assert int(bold_new_main_page) >= 700, "The new price is not bold"
-    print("Values: %s | %s | %s | %s " % (color_old_price, crossed_old_main_page, color_new_price, bold_new_main_page))
+    assert crossed_old_price[:12] == 'line-through', "The old price is not crossed"
+    assert int(bold_new_price) >= 700, "The new price is not bold"
+    print("Values: %s | %s | %s | %s " % (color_old_price, crossed_old_price, color_new_price, bold_new_price))
 
 
 def test_compare_pages(driver):
@@ -73,8 +73,8 @@ def test_styles_on_item_page(driver):
 
     color_old_price = old_price_element.value_of_css_property("color")
     color_new_price = new_price_element.value_of_css_property("color")
-    crossed_old_main_page = old_price_element.value_of_css_property("text-decoration")
-    bold_new_main_page = new_price_element.value_of_css_property("font-weight")
+    crossed_old_price = old_price_element.value_of_css_property("text-decoration")
+    bold_new_price = new_price_element.value_of_css_property("font-weight")
 
     color_old_parsed = parsing_color(color_old_price)
     color_new_parsed = parsing_color(color_new_price)
@@ -83,7 +83,7 @@ def test_styles_on_item_page(driver):
              ), "The old price font is bigger than new one")
     assert color_old_parsed[0] == color_old_parsed[1] == color_old_parsed[2], "The old price color is not grey"
     assert color_new_parsed[1] == color_new_parsed[2] == 0, "The new price color is not red"
-    assert crossed_old_main_page[:12] == 'line-through', "The old price is not crossed"
-    assert int(bold_new_main_page) >= 700, "The new price is not bold"
-    print("Values: %s | %s | %s | %s " % (color_old_price, crossed_old_main_page, color_new_price, bold_new_main_page))
+    assert crossed_old_price[:12] == 'line-through', "The old price is not crossed"
+    assert int(bold_new_price) >= 700, "The new price is not bold"
+    print("Values: %s | %s | %s | %s " % (color_old_price, crossed_old_price, color_new_price, bold_new_price))
 
