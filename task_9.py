@@ -47,4 +47,21 @@ def test_sorting(driver):
         driver.get("http://localhost/litecart/admin/?app=countries&doc=countries")
 
 
+def test_sorting_admin_page(driver):
+    driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones")
+    all_rows = driver.find_elements_by_xpath("//form[@name='geo_zones_form']//tr[@class='row']")
+
+    for i in range(len(all_rows)):
+        xpath_country_with_zones = "//form[@name='geo_zones_form']//tr[@class='row'][" + str(i + 1) + "]"
+        element = driver.find_element_by_xpath(xpath_country_with_zones)
+        element.find_element_by_css_selector('a:not([title])').click()
+        zones_elements = driver.find_elements_by_css_selector("select[name*='[zone_code]']")
+
+        zones = []
+        for j in range(len(zones_elements)):
+            zones.append(zones_elements[j].find_element_by_css_selector("[selected='selected']").text)
+        zones_sorted = zones.copy()
+        zones_sorted.sort()
+        assert (zones_sorted == zones), 'List of zones is not sorted'
+        driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones")
 
