@@ -10,7 +10,7 @@ def driver(request):
     return wd
 
 
-def test_example(driver):
+def test_login(driver):
     driver.get("http://localhost/litecart/admin/login.php")
     wait = WebDriverWait(driver, 10)
     driver.find_element_by_name("username").send_keys("admin")
