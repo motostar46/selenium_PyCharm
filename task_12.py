@@ -15,13 +15,13 @@ def driver(request):
     options.add_argument("start-maximized")
 
     wd = webdriver.Chrome(chrome_options=options)
+    wd.implicitly_wait(3)
     request.addfinalizer(wd.quit)
     return wd
 
 
 def test_add_item_general(driver):
     test_example.test_login(driver)
-    driver.implicitly_wait(3)
     driver.get("http://localhost/litecart/admin/?app=catalog&doc=catalog")
     driver.find_element_by_css_selector("[style*='right'] a[href*='edit_product']").click()
     driver.find_element_by_css_selector("[type=radio][value='1']").click()
